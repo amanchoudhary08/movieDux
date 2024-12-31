@@ -1,0 +1,418 @@
+### General Reset
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+- `*`: This selector targets every element on the page.
+- `margin: 0;`: Removes any default margin applied by browsers.
+- `padding: 0;`: Removes any default padding applied by browsers.
+- `box-sizing: border-box;`: Ensures that padding and border are included within the element's total width and height (so they don't affect its layout).
+
+### Typography
+```css
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+```
+- `font-family: "Roboto", sans-serif;`: Sets the font to "Roboto" for the body text, falling back to sans-serif if "Roboto" is unavailable.
+- `color: #fff;`: Sets the text color to white.
+- `background-color: #121212;`: Sets the background color of the page to a very dark gray (near black).
+
+```css
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+```
+- `max-width: 1200px;`: Sets a maximum width for elements inside `.container`, preventing them from growing too large.
+- `margin: 0 auto;`: Centers the `.container` horizontally by setting equal left and right margins.
+
+### Header Styles
+```css
+.header {
+  margin-top: 50px;
+}
+```
+- `margin-top: 50px;`: Adds a 50px top margin to the header, creating space above it.
+
+### Search Input Styles
+```css
+.search-input {
+  padding: 15px;
+  margin: 25px 10px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+}
+```
+- `padding: 15px;`: Adds padding inside the input box (space around the text).
+- `margin: 25px 10px;`: Adds vertical margin of 25px and horizontal margin of 10px.
+- `width: 100%;`: Makes the input field span the full width of its container.
+- `font-size: 16px;`: Sets the font size for the text inside the input field.
+- `border-radius: 100px;`: Rounds the corners of the input box, making it pill-shaped.
+- `border: 1px solid #ccc;`: Adds a 1px solid light gray border around the input field.
+
+### Genre and Filter Bar Styles
+```css
+.filter-bar {
+  display: flex;
+  justify-content: right;
+}
+```
+- `display: flex;`: Makes the `.filter-bar` a flex container, allowing easy alignment of its child elements.
+- `justify-content: right;`: Aligns the child elements to the right of the container.
+
+```css
+.filter-slot {
+  background-color: #2c2c2c;
+  padding: 0 25px;
+  margin: 10px;
+  border-radius: 50px;
+}
+```
+- `background-color: #2c2c2c;`: Sets the background color to a dark gray.
+- `padding: 0 25px;`: Adds horizontal padding of 25px to the slot.
+- `margin: 10px;`: Adds a 10px margin around the slot.
+- `border-radius: 50px;`: Rounds the corners to create a pill-shaped slot.
+
+```css
+.filter-dropdown {
+  padding: 8px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
+```
+- `padding: 8px;`: Adds padding inside the dropdown.
+- `margin: 10px;`: Adds a 10px margin around the dropdown.
+- `border-radius: 5px;`: Rounds the corners slightly.
+- `background-color: #fff;`: Sets the background color to white.
+- `color: #333;`: Sets the text color to dark gray.
+
+### Movies Grid and Watchlist Styles
+```css
+.movies-grid,
+.watchlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 2rem 2rem;
+  padding: 1rem;
+  justify-content: center;
+}
+```
+- `display: grid;`: Makes both `.movies-grid` and `.watchlist` containers grid-based, allowing elements to be placed in a grid layout.
+- `grid-template-columns: repeat(auto-fill, 250px);`: Automatically fills the container with columns, each 250px wide.
+- `gap: 2rem 2rem;`: Adds a 2rem gap between rows and columns of the grid.
+- 1 rem == 16px
+- `padding: 1rem;`: Adds padding inside the grid container.
+- `justify-content: center;`: Centers the grid inside its container.
+
+### Movie Card Styles
+```css
+.movie-card {
+  background-color: #272727;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+```
+- `background-color: #272727;`: Sets the background color to dark gray.
+- `border-radius: 8px;`: Rounds the corners of the card.
+- `overflow: hidden;`: Ensures that content (e.g., images) doesn't overflow the card's boundaries.
+- `transition: transform 0.2s ease-in-out;`: Adds a smooth transition effect for transforming (scaling) the card.
+- `box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);`: Adds a shadow below the card for a 3D effect.
+
+```css
+.movie-card:hover {
+  transform: scale(1.03);
+}
+```
+- `transform: scale(1.03);`: Scales the card up by 3% when the user hovers over it.
+
+```css
+.movie-card img {
+  width: 250px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+```
+- `width: 250px;`: Sets the image width to 250px.
+- `height: auto;`: Ensures the image height adjusts automatically to maintain its aspect ratio.
+- `display: block;`: Removes the default inline behavior of images.
+- `object-fit: contain;`: Ensures the image fits within the container without being cropped.
+- `object-position: center;`: Centers the image within its container.
+
+```css
+.movie-card-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+```
+- `padding: 1rem;`: Adds padding inside the `.movie-card-info`.
+- `display: flex;`: Uses flexbox for layout inside the card info.
+- `flex-direction: column;`: Arranges elements in a vertical column.
+- `gap: 0.5rem;`: Adds a 0.5rem gap between elements.
+- `text-align: center;`: Centers the text within the `.movie-card-info`.
+
+```css
+.movie-card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+```
+- `font-size: 1.1rem;`: Sets the title font size.
+- `font-weight: bold;`: Makes the title bold.
+
+```css
+.movie-card-rating {
+  font-size: 0.9rem;
+  font-weight: bold;
+  background: #141414;
+  padding: 3px 10px;
+  margin: 0 auto;
+  width: 50px;
+  border-radius: 50px;
+}
+```
+- `font-size: 0.9rem;`: Sets the font size of the rating.
+- `font-weight: bold;`: Makes the rating bold.
+- `background: #141414;`: Sets the background color to dark gray.
+- `padding: 3px 10px;`: Adds padding around the rating text.
+- `margin: 0 auto;`: Centers the rating horizontally.
+- `width: 50px;`: Sets a fixed width for the rating.
+- `border-radius: 50px;`: Rounds the corners, making it pill-shaped.
+
+```css
+.movie-card-genre {
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+```
+- `font-size: 0.9rem;`: Sets the font size for the genre.
+- `margin-right: 10px;`: Adds a right margin of 10px to separate it from other elements.
+
+### Watchlist Button Styles
+```css
+.watchlist-btn {
+  border: none;
+  background: #2196f3;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+```
+- `border: none;`: Removes the button’s border.
+- `background: #2196f3;`: Sets the background color to a blue shade.
+- `color: white;`: Sets the text color to white.
+- `padding: 0.5rem 1rem;`: Adds padding around the button text.
+- `font-size: 1rem;`: Sets the font size for the text inside the button.
+- `border-radius: 4px;`: Rounds the corners of the button slightly.
+- `cursor: pointer;`: Changes the cursor to a pointer when hovered.
+- `transition: background-color 0.2s;`: Adds a transition effect for background color changes.
+
+### Footer Styles
+```css
+.footer {
+  margin-top: 100px;
+  background-color: #2c2c2c;
+  padding: 1rem;
+  text-align: center;
+}
+```
+- `margin-top: 100px;`: Adds a 100px margin on top of the footer to create space.
+- `background-color: #2c2c2c;`: Sets the background color to dark gray.
+- `padding: 1rem;`: Adds padding inside the footer.
+- `text-align: center;`: Centers the text inside the footer.
+
+```css
+.footer-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+```
+- `color: rgba(255, 255, 255, 0.7);`: Sets the text color to white with 70% opacity.
+- `font-size: 0.9rem;`: Sets the font size for the footer text.
+
+### Rating Color Classes
+```css
+.rating-good {
+  color: rgb(148, 255, 105);
+}
+
+.rating-ok {
+  color: rgb(255, 209, 123);
+}
+
+.rating-bad {
+  color: rgb(255, 123, 123);
+}
+```
+- These classes set different colors for good, okay, and bad ratings.
+
+### Title and Logo Styles
+```css
+.title {
+  text-align: center;
+  margin: 25px 0;
+}
+```
+- Centers the title and adds 25px of vertical margin.
+
+```css
+.logo {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  display: block;
+}
+```
+- Makes the logo fill its container width, but not exceed 920px.
+- Centers the logo horizontally.
+
+```css
+.app-subtitle {
+  text-align: center;
+  margin: 25px auto;
+  font-weight: 300;
+}
+```
+- Centers the subtitle and gives it 25px of vertical margin.
+- Sets the font weight to light (300).
+
+### Navigation Bar Styles
+```css
+nav {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+```
+- Adds top and bottom margins to the navigation.
+
+```css
+ul {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+```
+- Removes default list styling, sets margin to zero, and aligns the navigation links in a horizontal line.
+
+```css
+ul li {
+  padding: 10px;
+}
+```
+- Adds padding around each navigation list item.
+
+```css
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+```
+- Sets link styling (color, padding, border-radius, etc.) to make them appear as rounded, clickable buttons.
+
+```css
+nav a:hover {
+  background-color: #e7f2f1;
+  color: black;
+}
+```
+- Changes the background color and text color of navigation links when hovered.
+
+### Switch Styles (e.g., for toggling dark/light mode)
+```css
+.switch {
+  margin: 20px auto;
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 24px;
+}
+```
+- Creates a toggle switch with a width of 150px and height of 24px.
+
+```css
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+```
+- Hides the actual input element (checkbox) inside the switch.
+
+```css
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #141414;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+```
+- Styles the slider part of the switch, including position, background color, and transition for smooth sliding.
+
+```css
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+```
+- Styles the circle inside the switch (the part that moves).
+
+```css
+.slider-label {
+  color: #fff;
+  font-size: 12px;
+  width: 100%;
+  line-height: 24px;
+  transition: opacity 0.4s ease;
+}
+```
+- Adds styling to the label for the switch.
+
+```css
+input:checked + .slider:before {
+  transform: translateX(125px);
+}
+```
+- Moves the circle inside the switch to the right when the checkbox is checked.
+
+```css
+input:checked + .slider {
+  background-color: #ffa100;
+}
+```
+- Changes the background color of the slider to an orange shade when checked.
